@@ -39,11 +39,17 @@ L2 was superseded by B1 (MacroSurveillance). P2 was validated as the stronger Py
 
 ## Projects
 
-### Active (full plans)
+### Implemented
 
 | Project | Directory | Business Question |
 |---------|-----------|-------------------|
-| **CPG Private Label Opportunity Engine** | [PrivateLabelOpportunities/](PrivateLabelOpportunities/) | Which food categories represent the highest-value private label opportunities for European retailers? |
+| **Steam Game Market Intelligence Engine** | [projects/SteamMarketGapAnalysis/](projects/SteamMarketGapAnalysis/) | Which genre/tag combinations have strong player demand but few competing titles, and what revenue can a new entrant realistically expect? |
+| **CPG Private Label Opportunity Engine** | [projects/PrivateLabelOpportunities/](projects/PrivateLabelOpportunities/) | Which food categories represent the highest-value private label opportunities for European retailers? |
+
+### Planned (full plans)
+
+| Project | Directory | Business Question |
+|---------|-----------|-------------------|
 | **EU Food Safety Regulatory Intelligence** (L1) | [projects/FoodSafetyIntelligence/](projects/FoodSafetyIntelligence/) | For a company launching product X in the EU, which food safety regulations apply and what are the compliance requirements? |
 | **Corporate Earnings Macro Surveillance** (B1) | [projects/MacroSurveillance/](projects/MacroSurveillance/) | Can structured extraction from earnings call transcripts replicate central bank macroeconomic surveillance signals? |
 | **Custom ESG Embedding Model** (P2) | [projects/CustomEmbeddingsSearch/](projects/CustomEmbeddingsSearch/) | Can a domain-specific sentence-transformer materially improve retrieval quality on ESG sustainability reports? |
@@ -56,11 +62,11 @@ L2 was superseded by B1 (MacroSurveillance). P2 was validated as the stronger Py
 
 ## Skill Coverage Matrix
 
-| Dimension | Private Label | Food Safety (L1) | Macro Surveillance (B1) | ESG Embeddings (P2) |
-|-----------|--------------|-------------------|--------------------------|----------------------|
-| **Domain** | Retail/CPG | EU regulation | Finance/macro | ESG/sustainability |
-| **Core technique** | Competitive analysis, scoring | RAG + structured extraction | NLP extraction + time series | Contrastive learning, IR evaluation |
-| **Data sources** | Open Food Facts + scrapers | EUR-Lex corpus | Earnings transcripts (multi-API) | ESGBench + CDP + GRI + TCFD + synthetic |
-| **Modern stack** | Classical | LangChain, vector stores | LLM extraction | PyTorch, SentenceTransformers, ONNX |
-| **Key artifact** | Scoring dashboard | Compliance extraction API | Macro indicator pipeline | Published HuggingFace model |
-| **Deployment** | Streamlit | Streamlit + FastAPI + Docker | Streamlit + FastAPI + Docker | Streamlit + FastAPI + Docker + HF Hub |
+| Dimension | Steam Market Gap | Private Label | Food Safety (L1) | Macro Surveillance (B1) | ESG Embeddings (P2) |
+|-----------|-----------------|--------------|-------------------|--------------------------|----------------------|
+| **Domain** | Gaming/entertainment | Retail/CPG | EU regulation | Finance/macro | ESG/sustainability |
+| **Core technique** | ALS collaborative filtering, market gap scoring | Competitive analysis, scoring | RAG + structured extraction | NLP extraction + time series | Contrastive learning, IR evaluation |
+| **Data sources** | Steam Web API + SteamSpy + RAWG | Open Food Facts + scrapers | EUR-Lex corpus | Earnings transcripts (multi-API) | ESGBench + CDP + GRI + TCFD + synthetic |
+| **Modern stack** | Classical (implicit, scikit-learn) | Classical | LangChain, vector stores | LLM extraction | PyTorch, SentenceTransformers, ONNX |
+| **Key artifact** | Market niche rankings + recommender | Scoring dashboard | Compliance extraction API | Macro indicator pipeline | Published HuggingFace model |
+| **Deployment** | Streamlit | Streamlit | Streamlit + FastAPI + Docker | Streamlit + FastAPI + Docker | Streamlit + FastAPI + Docker + HF Hub |
