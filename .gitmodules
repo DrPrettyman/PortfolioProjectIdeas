@@ -1,0 +1,18 @@
+[submodule "projects/FoodSafetyIntelligence"]
+	path = projects/FoodSafetyIntelligence
+	url = https://github.com/DrPrettyman/FoodSafetyIntelligence.git
+[submodule "projects/MacroSurveillance"]
+	path = projects/MacroSurveillance
+	url = https://github.com/DrPrettyman/MacroSurveillance.git
+[submodule "projects/CustomEmbeddingsSearch"]
+	path = projects/CustomEmbeddingsSearch
+	url = https://github.com/DrPrettyman/CustomEmbeddingsSearch.git
+[submodule "projects/FineTuneVsPrompt"]
+	path = projects/FineTuneVsPrompt
+	url = https://github.com/DrPrettyman/FineTuneVsPrompt.git
+[submodule "projects/SteamMarketGapAnalysis"]
+	path = projects/SteamMarketGapAnalysis
+	url = https://github.com/DrPrettyman/SteamMarketGapAnalysis.git
+[submodule "projects/PrivateLabelOpportunities"]
+	path = projects/PrivateLabelOpportunities
+	url = https://github.com/DrPrettyman/PrivateLabelOpportunities.git
