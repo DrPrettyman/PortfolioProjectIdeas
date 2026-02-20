@@ -26,14 +26,14 @@ Includes a quick-reference checklist used to audit every project plan.
 
 ## Projects
 
-| Project | Directory | Domain | Stack | Status |
-|---------|-----------|--------|-------|--------|
-| Steam Game Market Intelligence Engine | [SteamMarketGapAnalysis](projects/SteamMarketGapAnalysis/) | Gaming | Classical ML (implicit, scikit-learn) | Implemented |
-| CPG Private Label Opportunity Engine | [PrivateLabelOpportunities](projects/PrivateLabelOpportunities/) | Retail/CPG | Classical ML (scikit-learn, DuckDB) | Implemented |
-| EU Food Safety Regulatory Intelligence | [FoodSafetyIntelligence](projects/FoodSafetyIntelligence/) | EU regulation | LangChain, vector stores | Planned |
-| Corporate Earnings Macro Surveillance | [MacroSurveillance](projects/MacroSurveillance/) | Finance/macro | LLM extraction | Planned |
-| Custom ESG Embedding Model | [CustomEmbeddingsSearch](projects/CustomEmbeddingsSearch/) | ESG/sustainability | PyTorch, SentenceTransformers, ONNX | Planned |
-| Fine-Tune vs. Prompt Benchmark | [FineTuneVsPrompt](projects/FineTuneVsPrompt/) | ML engineering | PyTorch, HuggingFace | Parked |
+| Project | Repo | Domain | Stack | Status |
+|---------|------|--------|-------|--------|
+| Steam Game Market Intelligence Engine | [SteamMarketGapAnalysis](https://github.com/DrPrettyman/SteamMarketGapAnalysis) | Gaming | Classical ML (implicit, scikit-learn) | Implemented |
+| CPG Private Label Opportunity Engine | [PrivateLabelOpportunities](https://github.com/DrPrettyman/PrivateLabelOpportunities) | Retail/CPG | Classical ML (scikit-learn, DuckDB) | Implemented |
+| EU Food Safety Regulatory Intelligence | [FoodSafetyIntelligence](https://github.com/DrPrettyman/FoodSafetyIntelligence) | EU regulation | LangChain, vector stores | Planned |
+| Corporate Earnings Macro Surveillance | [MacroSurveillance](https://github.com/DrPrettyman/MacroSurveillance) | Finance/macro | LLM extraction | Planned |
+| Custom ESG Embedding Model | [CustomEmbeddingsSearch](https://github.com/DrPrettyman/CustomEmbeddingsSearch) | ESG/sustainability | PyTorch, SentenceTransformers, ONNX | Planned |
+| Fine-Tune vs. Prompt Benchmark | [FineTuneVsPrompt](https://github.com/DrPrettyman/FineTuneVsPrompt) | ML engineering | PyTorch, HuggingFace | Parked |
 
 ### Steam Game Market Intelligence Engine
 
