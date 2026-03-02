@@ -30,7 +30,7 @@ Includes a quick-reference checklist used to audit every project plan.
 |---------|------|--------|-------|--------|
 | Steam Game Market Intelligence Engine | [SteamMarketGapAnalysis](https://github.com/DrPrettyman/SteamMarketGapAnalysis) | Gaming | Classical ML (implicit, scikit-learn) | Implemented |
 | CPG Private Label Opportunity Engine | [PrivateLabelOpportunities](https://github.com/DrPrettyman/PrivateLabelOpportunities) | Retail/CPG | Classical ML (scikit-learn, DuckDB) | Implemented |
-| EU Food Safety Regulatory Intelligence | [FoodSafetyIntelligence](https://github.com/DrPrettyman/FoodSafetyIntelligence) | EU regulation | LangChain, vector stores | Planned |
+| EU Food Safety Regulatory Intelligence | [FoodSafetyIntelligence](https://github.com/DrPrettyman/FoodSafetyIntelligence) | EU regulation | RAG, sentence-transformers, Anthropic API | Implemented |
 | Corporate Earnings Macro Surveillance | [MacroSurveillance](https://github.com/DrPrettyman/MacroSurveillance) | Finance/macro | LLM extraction | Planned |
 | Custom ESG Embedding Model | [CustomEmbeddingsSearch](https://github.com/DrPrettyman/CustomEmbeddingsSearch) | ESG/sustainability | PyTorch, SentenceTransformers, ONNX | Planned |
 | Fine-Tune vs. Prompt Benchmark | [FineTuneVsPrompt](https://github.com/DrPrettyman/FineTuneVsPrompt) | ML engineering | PyTorch, HuggingFace | Parked |
@@ -49,9 +49,9 @@ A data-driven framework that identifies food categories where European retailers
 
 ### EU Food Safety Regulatory Intelligence
 
-RAG system over the EU food safety regulatory corpus (~120 regulations) that answers: for a company launching product X in the EU, which food safety regulations apply and what are the compliance requirements? Regulatory consulting firms bill €300–500/hour for this work; compliance SaaS platforms charge €10K–50K/year. The system extracts every regulated entity from EUR-Lex documents to build structured input options and deterministic routing, then uses LLM extraction to generate compliance checklists. Evaluation targets 82% precision against expert-validated ground truth. The key technical challenges are chunking dense cross-referential legal text and resolving amendment chains ("Regulation X as amended by Directive Y").
+Given a food product's category, ingredients, claims, and packaging, generates a compliance checklist citing specific EU regulation articles. Parsed 243 regulations (2,823 articles) from EUR-Lex HTML across 4 format variants, extracted 702 defined terms and 1,032 cross-references. The system routes to applicable regulations deterministically (no LLM in the retrieval loop), then uses Anthropic's Claude with tool_use to extract structured requirements from matched articles. Evaluated against 52 hand-labelled ground-truth requirements across 3 product scenarios: precision 0.58, recall 0.69, F1 0.63, hallucination rate 0%. Every false negative traces to a retrieval failure (relevant article ranked outside the search window), not an extraction error. Deployed as Streamlit UI + FastAPI REST API via Docker Compose. 304 passing tests.
 
-**Planned tech:** LangChain, FAISS/Chroma, Streamlit, FastAPI, Docker | EUR-Lex corpus
+**Tech:** Python, sentence-transformers, NumPy, Anthropic API (tool_use), FastAPI, Streamlit, Docker | EUR-Lex corpus (243 regulations)
 
 ### Corporate Earnings Macro Surveillance
 
@@ -76,6 +76,6 @@ Decision framework for when to fine-tune a small model vs. use LLM API calls for
 | **Domain** | Gaming/entertainment | Retail/CPG | EU regulation | Finance/macro | ESG/sustainability |
 | **Core technique** | ALS collaborative filtering, market gap scoring | Competitive analysis, scoring | RAG + structured extraction | NLP extraction + time series | Contrastive learning, IR evaluation |
 | **Data sources** | Steam Web API + SteamSpy + RAWG | Open Food Facts + scrapers | EUR-Lex corpus | Earnings transcripts (multi-API) | ESGBench + CDP + GRI + TCFD + synthetic |
-| **Modern stack** | Classical (implicit, scikit-learn) | Classical | LangChain, vector stores | LLM extraction | PyTorch, SentenceTransformers, ONNX |
-| **Key artifact** | Market niche rankings + recommender | Scoring dashboard | Compliance extraction API | Macro indicator pipeline | Published HuggingFace model |
+| **Modern stack** | Classical (implicit, scikit-learn) | Classical | sentence-transformers, Anthropic API (tool_use) | LLM extraction | PyTorch, SentenceTransformers, ONNX |
+| **Key artifact** | Market niche rankings + recommender | Scoring dashboard | Compliance checklist API (304 tests) | Macro indicator pipeline | Published HuggingFace model |
 | **Deployment** | Streamlit | Streamlit | Streamlit + FastAPI + Docker | Streamlit + FastAPI + Docker | Streamlit + FastAPI + Docker + HF Hub |
